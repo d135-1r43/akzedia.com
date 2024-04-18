@@ -14,7 +14,7 @@
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
 	<div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
 		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop>
-			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4" >
+			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4">
 		</video>
 	</div>
 	<div class="video-content space-y-2 w-full">
@@ -22,17 +22,23 @@
 			<h1>
 				<img class="w-full h-full object-cover" alt="Akzedia" src="akzedia.svg" />
 			</h1>
-			<p class="mb-20 text-2xl tracking-widest uppercase font-thin">Lorem Ipsum</p>
+			<p class="mb-10 mt-20 text-2xl tracking-widest uppercase font-trajan">{data.band.short_description}</p>
+		</div>
+		<div class="items-center justify-center mx-auto text-4xl">
+			{#each data.band.links as link}
+				<a href="{link.url}" class="text-gray-300 transition hover:text-gray-500">
+					<i class="{link.font_awesome_font} {link.font_awesome_icon_name}"></i>
+				</a>
+			{/each}
 		</div>
 	</div>
 </section>
 
-<footer class="footer items-center p-4 bg-neutral text-neutral-content">
+<footer class="footer items-center p-4 bg-black text-gray-600">
 	<div class="items-center grid-flow-col">
-		<p>©&nbsp;{currentYear}</p>
-	</div>
-	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-		{data.band.impress}
+		<p>©&nbsp;{currentYear}&nbsp;&middot;&nbsp;Impress:
+			{@html data.band.impress}
+		</p>
 	</div>
 </footer>
 
@@ -42,6 +48,7 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
     .video-docker::after {
         content: "";
         position: absolute;

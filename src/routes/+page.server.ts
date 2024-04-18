@@ -4,7 +4,7 @@ import type { PageLoad } from './$types';
 export const load: PageLoad = async ({ fetch: fetch }) => {
 
 	const jsonResponse: Response = await fetch(
-		`https://directus.herhoffer.net/items/band/2`
+		`https://directus.herhoffer.net/items/band/2?fields=*,links.*`
 	);
 
 	const json: unknown = await jsonResponse.json();
