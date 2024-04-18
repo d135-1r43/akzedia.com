@@ -17,9 +17,13 @@
 			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4" >
 		</video>
 	</div>
-	<div class="video-content space-y-2">
-		<h1 class="text-6xl">full Hero Video</h1>
-		<h3 class="text-3xl">with TailwindCSS</h3>
+	<div class="video-content space-y-2 w-full">
+		<div class="xl:w-8/12 w-10/12 items-center justify-center mx-auto" id="logo">
+			<h1>
+				<img class="w-full h-full object-cover" alt="Akzedia" src="akzedia.svg" />
+			</h1>
+			<p class="mb-20 text-2xl tracking-widest uppercase font-thin">Lorem Ipsum</p>
+		</div>
 	</div>
 </section>
 
