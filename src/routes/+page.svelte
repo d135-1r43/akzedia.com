@@ -5,36 +5,51 @@
 
 	const currentYear = new Date().getFullYear();
 
-	function getImageUrl(uuid: string): string {
+	function getAssetUrl(uuid: string): string {
 		return 'https://directus.herhoffer.net/assets/' + uuid;
 	}
+
 </script>
 
-<div class="hero min-h-screen" style="background-image: url({getImageUrl(data.aggregator.background_image.id)})">
-	<div class="hero-overlay bg-opacity-20"></div>
-	<div class="hero-content text-center text-neutral-content">
-		<div class="max-w-md">
-			<h1>
-				<img class="mb-5 mt-15" src="{getImageUrl(data.aggregator.logo_image.id)}" alt="{data.aggregator.title}" />
-			</h1>
-			<p class="mb-20 text-2xl tracking-widest uppercase font-thin">{data.aggregator.tagline}</p>
-			{#each data.aggregator.links as link}
-				<a class="btn btn-block mb-5 opacity-75 shadow-2xl shadow-inner" href="{link.url}">
-					<i class="{link.font_awesome_font} {link.font_awesome_icon_name} text-2xl"></i>
-					<span class="tracking-widest">{link.caption}</span>
-				</a>
-			{/each}
-		</div>
+<section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
+	<div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
+		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop>
+			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4" >
+		</video>
 	</div>
-</div>
+	<div class="video-content space-y-2">
+		<h1 class="text-6xl">full Hero Video</h1>
+		<h3 class="text-3xl">with TailwindCSS</h3>
+	</div>
+</section>
+
 <footer class="footer items-center p-4 bg-neutral text-neutral-content">
 	<div class="items-center grid-flow-col">
 		<p>©&nbsp;{currentYear}</p>
 	</div>
 	<div class="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-		Jurisdiction: Germany
-		<a href="{data.aggregator.impress_url}">
-			<span>Impressum & Datenschutzerklärung</span>
-		</a>
+		{data.band.impress}
 	</div>
 </footer>
+
+<style>
+    .video-docker video {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .video-docker::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+    }
+
+    .video-content {
+        z-index: 2;
+    }
+</style>
