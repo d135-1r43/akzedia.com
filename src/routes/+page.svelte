@@ -11,6 +11,10 @@
 
 </script>
 
+<svelte:head>
+	<title>{data.band.name}</title>
+</svelte:head>
+
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
 	<div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
 		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop>
