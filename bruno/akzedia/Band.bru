@@ -5,7 +5,11 @@ meta {
 }
 
 get {
-  url: https://directus.herhoffer.net/items/bands/3
+  url: https://directus.herhoffer.net/items/band/2?fields=*,links.*
   body: none
   auth: none
+}
+
+query {
+  fields: *,links.*
 }
