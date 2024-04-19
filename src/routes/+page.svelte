@@ -40,8 +40,7 @@
 
 <footer class="footer items-center p-4 bg-black text-gray-600">
 	<div class="items-center grid-flow-col">
-		<p>©&nbsp;{currentYear}&nbsp;&middot;&nbsp;Impress:
-			{@html data.band.impress}
+		<p>©&nbsp;{currentYear}&nbsp;&middot;&nbsp;Impress: {data.band.impress.replace(/<[^>]*>?/gm, '')}
 		</p>
 	</div>
 </footer>
