@@ -17,12 +17,12 @@
 
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
 	<div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
-		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop>
+		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop playsinline>
 			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4">
 		</video>
 	</div>
 	<div class="video-content space-y-2 w-full">
-		<div class="xl:w-8/12 w-10/12 items-center justify-center mx-auto" id="logo">
+		<div class="xl:w-6/12 w-10/12 items-center justify-center mx-auto" id="logo">
 			<h1>
 				<img class="w-full h-full object-cover" alt="Akzedia" src="akzedia.svg" />
 			</h1>
