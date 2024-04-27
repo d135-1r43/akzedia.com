@@ -30,7 +30,7 @@
 		</div>
 		<div class="items-center justify-center mx-auto text-4xl">
 			{#each data.band.links as link}
-				<a href="{link.url}" class="text-gray-300 transition hover:text-gray-500">
+				<a href="{link.url}" class="text-gray-300 transition hover:text-gray-500 p-2">
 					<i class="{link.font_awesome_font} {link.font_awesome_icon_name}"></i>
 				</a>
 			{/each}
