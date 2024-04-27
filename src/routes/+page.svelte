@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Logo from "$lib/logo.svelte";
+	import Logo from '$lib/logo.svelte';
+	import { MetaTags } from 'svelte-meta-tags';
 
 	export let data: PageData;
 
@@ -16,16 +17,35 @@
 	<title>{data.band.name}</title>
 </svelte:head>
 
+<MetaTags
+	title="{data.band.name}"
+	description="{data.band.short_description}"
+	openGraph={{
+    url: data.band.website,
+    title: data.band.name,
+    description: data.band.short_description,
+    images: [
+      {
+        url: getAssetUrl(data.band.hero_image),
+        width: data.hero.width,
+        height: data.hero.height,
+        alt: data.hero.description
+      }
+    ],
+    siteName: data.band.name
+  }}
+/>
+
 <section class="relative h-screen flex flex-col items-center justify-center text-center text-white py-0 px-3">
 	<div class="video-docker absolute top-0 left-0 w-full h-full overflow-hidden">
 		<video class="min-w-full min-h-full absolute object-cover" autoplay muted loop playsinline>
-			<source src="{getAssetUrl(data.band.hero_image)}" type="video/mp4">
+			<source src="{getAssetUrl(data.band.hero_video)}" type="video/mp4">
 		</video>
 	</div>
 	<div class="video-content space-y-2 w-full">
 		<div class="xl:w-6/12 w-10/12 items-center justify-center mx-auto" id="logo">
 			<h1 class="w-full h-full object-cover">
-				<Logo/>
+				<Logo />
 			</h1>
 			<p class="mb-10 mt-20 text-2xl tracking-widest uppercase font-trajan">{data.band.short_description}</p>
 		</div>

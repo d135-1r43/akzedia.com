@@ -7,8 +7,15 @@ export const load: PageLoad = async ({ fetch: fetch }) => {
 		`https://directus.herhoffer.net/items/band/2?fields=*,links.*`
 	);
 
-	const json: unknown = await jsonResponse.json();
+	const bandJson: unknown = await jsonResponse.json();
+	// @ts-ignore
+	const heroImageUuid: string = bandJson.data.hero_image;
+
+	const heroImageFileResponse: Response = await fetch(
+		`https://directus.herhoffer.net/files/` + heroImageUuid
+	);
+	const fileJson: any = await heroImageFileResponse.json();
 
 	// @ts-expect-error Provided by Svelte
-	return { band: json.data };
+	return { band: bandJson.data, hero: fileJson.data };
 };
