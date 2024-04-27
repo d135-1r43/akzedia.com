@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import Logo from "$lib/logo.svelte";
 
 	export let data: PageData;
 
@@ -23,8 +24,8 @@
 	</div>
 	<div class="video-content space-y-2 w-full">
 		<div class="xl:w-6/12 w-10/12 items-center justify-center mx-auto" id="logo">
-			<h1>
-				<img class="w-full h-full object-cover" alt="Akzedia" src="akzedia.svg" />
+			<h1 class="w-full h-full object-cover">
+				<Logo/>
 			</h1>
 			<p class="mb-10 mt-20 text-2xl tracking-widest uppercase font-trajan">{data.band.short_description}</p>
 		</div>
