@@ -2,7 +2,7 @@
 	import { onMount, afterUpdate } from 'svelte';
 
 	let svg: SVGSVGElement;
-	let stdDeviation: SVGFEFuncGElement;
+	let stdDeviation: SVGFEGaussianBlurElement;
 
 	onMount(adjustBlurFilter);
 	afterUpdate(adjustBlurFilter);
@@ -31,7 +31,7 @@
 <svg bind:this={svg} viewBox="0 0 1086.68 717.32" style="fill:white">
 	<defs>
 		<filter id="blur">
-			<feGaussianBlur bind:this={stdDeviation} stdDeviation="0.6" />
+			<feGaussianBlur bind:this={stdDeviation} stdDeviation="0.6"></feGaussianBlur>
 		</filter>
 	</defs>
 	<g filter="url(#blur)">
