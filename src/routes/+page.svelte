@@ -3,7 +3,11 @@
 	import Logo from '$lib/logo.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 
-	export let data: PageData;
+	interface Props {
+		data: PageData;
+	}
+
+	let { data }: Props = $props();
 
 	const currentYear = new Date().getFullYear();
 
@@ -18,8 +22,8 @@
 </svelte:head>
 
 <MetaTags
-	title="{data.band.name}"
-	description="{data.band.short_description}"
+	title={data.band.name}
+	description={data.band.short_description}
 	openGraph={{
     url: data.band.website,
     title: data.band.name,
@@ -51,7 +55,7 @@
 		</div>
 		<div class="items-center justify-center mx-auto text-4xl">
 			{#each data.band.links as link}
-				<a href="{link.url}" class="text-gray-300 transition hover:text-gray-500 p-2">
+				<a href={link.url} class="text-gray-300 transition hover:text-gray-500 p-2">
 					<i class="{link.font_awesome_font} {link.font_awesome_icon_name}"></i>
 				</a>
 			{/each}
