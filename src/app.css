@@ -1,3 +1,5 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+.font-trajan {
+    font-family: "Trajan Pro 3", "trajan-pro-3", serif;
+}
