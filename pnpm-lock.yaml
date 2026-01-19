@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@sveltejs/adapter-node':
-        specifier: ^5.4.0
-        version: 5.4.0(@sveltejs/kit@2.49.5(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.46.4)(vite@5.4.21(lightningcss@1.30.1)))(svelte@5.46.4)(typescript@5.8.3)(vite@5.4.21(lightningcss@1.30.1)))
+        specifier: ^5.5.1
+        version: 5.5.1(@sveltejs/kit@2.49.5(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.46.4)(vite@5.4.21(lightningcss@1.30.1)))(svelte@5.46.4)(typescript@5.8.3)(vite@5.4.21(lightningcss@1.30.1)))
       '@sveltejs/kit':
         specifier: ^2.49.5
         version: 2.49.5(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.46.4)(vite@5.4.21(lightningcss@1.30.1)))(svelte@5.46.4)(typescript@5.8.3)(vite@5.4.21(lightningcss@1.30.1))
@@ -481,8 +481,8 @@ packages:
     peerDependencies:
       acorn: ^8.9.0
 
-  '@sveltejs/adapter-node@5.4.0':
-    resolution: {integrity: sha512-NMsrwGVPEn+J73zH83Uhss/hYYZN6zT3u31R3IHAn3MiKC3h8fjmIAhLfTSOeNHr5wPYfjjMg8E+1gyFgyrEcQ==}
+  '@sveltejs/adapter-node@5.5.1':
+    resolution: {integrity: sha512-VpZdPNRPQuZRtgfAMETPWWKpZx9JwXmUUsgz/+eSpw/Oh7+2O1uZHlsQTuyfxydJHPrRzjfu/ItcJjY4oscCiQ==}
     peerDependencies:
       '@sveltejs/kit': ^2.4.0
 
@@ -1421,6 +1421,7 @@ packages:
   tar@7.4.3:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
+    deprecated: Old versions of tar are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exhorbitant rates) by contacting i@izs.me
 
   tinyglobby@0.2.15:
     resolution: {integrity: sha512-j2Zq4NyQYG5XMST4cbs02Ak8iJUdxRM0XI5QyxXuZOzKOINmWurp3smXu3y5wDcJrptwpSjgXHzIQxR0omXljQ==}
@@ -1824,7 +1825,7 @@ snapshots:
     dependencies:
       acorn: 8.15.0
 
-  '@sveltejs/adapter-node@5.4.0(@sveltejs/kit@2.49.5(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.46.4)(vite@5.4.21(lightningcss@1.30.1)))(svelte@5.46.4)(typescript@5.8.3)(vite@5.4.21(lightningcss@1.30.1)))':
+  '@sveltejs/adapter-node@5.5.1(@sveltejs/kit@2.49.5(@sveltejs/vite-plugin-svelte@4.0.4(svelte@5.46.4)(vite@5.4.21(lightningcss@1.30.1)))(svelte@5.46.4)(typescript@5.8.3)(vite@5.4.21(lightningcss@1.30.1)))':
     dependencies:
       '@rollup/plugin-commonjs': 28.0.9(rollup@4.55.1)
       '@rollup/plugin-json': 6.1.0(rollup@4.55.1)
