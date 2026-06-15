@@ -4,6 +4,10 @@ updates:
     directory: "/"
     schedule:
       interval: "weekly"
+    # pnpm v11 enforces a 1-day minimumReleaseAge supply-chain policy; a 2-day
+    # cooldown keeps Dependabot from proposing versions younger than that floor.
+    cooldown:
+      default-days: 2
     groups:
       production-dependencies:
         dependency-type: "production"
