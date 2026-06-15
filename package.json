@@ -33,10 +33,5 @@
     "typescript": "^6.0.3",
     "vite": "^8.0.10"
   },
-  "type": "module",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  }
+  "type": "module"
 }
