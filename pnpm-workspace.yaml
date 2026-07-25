@@ -1,2 +1,11 @@
 allowBuilds:
   esbuild: true
+
+# pnpm 11 defaults minimumReleaseAge to 1440 (1 day) but leaves it *non-strict*:
+# during lockfile regeneration it silently falls back to a too-new version and
+# writes it in, which the later `--frozen-lockfile` verify then rejects in CI.
+# Setting it explicitly turns strict mode on, so resolution refuses sub-24h
+# versions (direct AND transitive) — no too-new entry ever reaches the lockfile.
+# This is the only layer that gates transitive deps; Dependabot's cooldown
+# (2 days, in .github/dependabot.yml) only gates the direct deps it bumps.
+minimumReleaseAge: 1440
