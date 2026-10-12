@@ -2,6 +2,9 @@
   "name": "akzedia.com",
   "version": "0.0.1",
   "private": true,
+  "imports": {
+    "#lib/*": "./src/lib/*"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
@@ -15,10 +18,10 @@
     "@sveltejs/adapter-node": "^6.0.0",
     "@sveltejs/kit": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^7.3.1",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/eslint": "9.6.1",
     "@typescript-eslint/eslint-plugin": "^8.71.1",
     "@typescript-eslint/parser": "^8.71.1",
-    "@tailwindcss/vite": "^4.3.3",
     "eslint": "^10.12.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-svelte": "^3.23.0",
@@ -30,7 +33,7 @@
     "svelte-meta-tags": "^5.0.2",
     "tailwindcss": "^4.3.3",
     "tslib": "^2.8.1",
-    "typescript": "^7.0.2",
+    "typescript": "^6.0.3",
     "vite": "^8.3.2"
   },
   "type": "module"
