@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import Logo from '$lib/logo.svelte';
+	import Logo from '#lib/logo.svelte';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	interface Props {
