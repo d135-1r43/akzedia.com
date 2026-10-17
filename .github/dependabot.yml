@@ -13,3 +13,8 @@ updates:
         dependency-type: "production"
       development-dependencies:
         dependency-type: "development"
+    ignore:
+      # TypeScript 7 (native port) drops the JS compiler API that SvelteKit 3
+      # relies on (peer dependency typescript ^6.0.0).
+      - dependency-name: "typescript"
+        update-types: ["version-update:semver-major"]
